@@ -26,12 +26,12 @@ const About = () => {
             className="lg:text-5xl sm:text-3xl text-2xl text-black tracking-widest md:leading-[70px] lg:leading-[70px]
           leading-[50px] font-black sm:text-start text-center"
           >
-            Unlimited Movies <br />{" "}
+            Unlimited Movies <br />
             <span className="text-[#db36a4]">Streaming</span>
           </div>
           <div className="text-gray-600 sm:text-base text-sm sm:mt-5 mt-2 sm:mx-0 mx-4 tracking-wide">
             Streaming online is completely 100% free <br />
-            Don't waste time for downloading movies
+            Dont waste time for downloading movies
           </div>
         </motion.div>
 
@@ -133,7 +133,7 @@ const About = () => {
           </div>
           <div className="text-gray-600 sm:text-base text-sm sm:mt-5 mt-2 sm:mx-0 mx-4 tracking-wide">
             You can download movies with ultrafast download speed <br />
-            This is also completely unlimited bandwidth{" "}
+            This is also completely unlimited bandwidth
           </div>
         </motion.div>
 
