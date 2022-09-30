@@ -48,7 +48,7 @@ const DriveHome = () => {
   };
 
   return (
-    <div className="w-full min-h-screen bg-[#202a43]">
+    <div className="w-full min-h-screen bg-[#202a43] pb-20">
       <Nav />
 
       <div className="pt-24 w-full flex justify-center items-center">
@@ -63,8 +63,8 @@ const DriveHome = () => {
                   height={1024}
                 />
               </div>
-              <div className="font-mono animate-pulse sm:text-base text-sm mb-10">
-                Still Loading...Please Wait
+              <div className="font-mono animate-pulse sm:text-base text-sm mb-10 text-center">
+                Loading...Please Wait
               </div>
             </div>
           ) : (
@@ -80,7 +80,8 @@ const DriveHome = () => {
                   Size:{" "}
                   {type == "mediafire"
                     ? data?.size
-                    : data?.title.split("(")[1].replace(")", "B")}
+                    : data.title.length > 0 &&
+                      data?.title.split("(")[1].replace(")", "B")}
                 </div>
               </div>
 
