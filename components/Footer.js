@@ -3,6 +3,8 @@ import React from "react";
 
 import FooterFilm from "../assests/footer-film.gif";
 import Playstore from "../assests/playstore.png";
+import { BiCopyright } from "react-icons/bi";
+import Link from "next/link";
 
 const Footer = () => {
   return (
@@ -21,44 +23,54 @@ const Footer = () => {
 
         <div className="sm:w-2/3 w-10/12 h-full flex justify-evenly sm:mx-0 mx-auto">
           <div className="w-40 h-full sm:py-24 py-12 flex flex-col space-y-5">
-            <a
-              href="/"
-              className="text-white font-sans hover:text-[#db36a4] cursor-pointer 
+            <Link href={"/#home"}>
+              <div
+                className="text-white font-sans hover:text-[#db36a4] cursor-pointer 
         transition-all duration-150"
-            >
-              Home
-            </a>
-            <a
-              href="/#about"
-              className="text-white font-sans hover:text-[#db36a4] cursor-pointer
+              >
+                Home
+              </div>
+            </Link>
+            <Link href={"/#about"}>
+              <div
+                className="text-white font-sans hover:text-[#db36a4] cursor-pointer
         transition-all duration-150"
-            >
-              About
-            </a>
-            <a
-              href="/#how-to-use"
-              className="text-white font-sans hover:text-[#db36a4] cursor-pointer
+              >
+                About
+              </div>
+            </Link>
+            <Link href={"/#how-to-use"}>
+              <div
+                className="text-white font-sans hover:text-[#db36a4] cursor-pointer
         transition-all duration-150"
-            >
-              How to Use
-            </a>
+              >
+                How to Use
+              </div>
+            </Link>
           </div>
 
           <div className="w-40 h-full sm:py-24 py-12 flex flex-col space-y-5">
-            <a
-              href="/"
-              className="text-white font-sans hover:text-[#db36a4] cursor-pointer 
-        transition-all duration-150"
+            <Link
+              href="/drive?url=https://drive.google.com/u/0/uc?id=15QidEp013sy8IRZH6CsMrmpemRZS6oef&export=download&type=googledrive"
+              passHref
             >
-              Our Drive
-            </a>
-            <a
-              href="/#about"
-              className="text-white font-sans hover:text-[#db36a4] cursor-pointer
+              <a target="_blink">
+                <div
+                  className="text-white font-sans hover:text-[#db36a4] cursor-pointer 
+      transition-all duration-150"
+                >
+                  Our Drive
+                </div>
+              </a>
+            </Link>
+            <Link href={"/#home"}>
+              <div
+                className="text-white font-sans hover:text-[#db36a4] cursor-pointer
         transition-all duration-150"
-            >
-              Helps
-            </a>
+              >
+                Helps
+              </div>
+            </Link>
             <div className="w-32 h-10 cursor-pointer">
               <Image
                 src={Playstore}
@@ -75,7 +87,7 @@ const Footer = () => {
         className="w-full h-16 flex justify-center items-center text-white sm:text-base
         text-xs font-mono font-extralight"
       >
-        Copyrights &#169; All rights reserved
+        Copyrights <BiCopyright className="mx-2" /> All rights reserved
       </div>
     </div>
   );

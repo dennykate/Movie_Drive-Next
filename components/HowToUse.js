@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { FaWalking } from "react-icons/fa";
 import { BsAlarmFill } from "react-icons/bs";
 import { RiMovie2Fill } from "react-icons/ri";
+import Link from "next/link";
 
 const HowToUse = () => {
   return (
@@ -103,17 +104,20 @@ const HowToUse = () => {
           <div className="w-full h-20 flex justify-center items-center text-2xl font-bold uppercase">
             Step-4
           </div>
-          <a
-            target="_blink"
+          <Link
             href="/drive?url=https://drive.google.com/u/0/uc?id=15QidEp013sy8IRZH6CsMrmpemRZS6oef&export=download&type=googledrive"
+            passHref
           >
-            <div
-              className="mx-3 text-base text-center font-semibold font-mono py-2 bg-[#bd36a4] text-white 
-          cursor-pointer hover:rounded-none transition duration-200 transform -translate-y-2 sm:rounded-full rounded-none"
-            >
-              Watch Demo
-            </div>
-          </a>
+            <a target="_blink">
+              <div
+                className="mx-3 text-base text-center font-semibold font-mono py-2 bg-[#bd36a4] text-white 
+          cursor-pointer rounded-full hover:bg-[#f5f5f5] border hover:border-2 hover:border-[#db36a4] hover:text-[#db36a4]
+          transform -translate-y-2"
+              >
+                Watch Demo
+              </div>
+            </a>
+          </Link>
         </motion.div>
       </div>
     </div>

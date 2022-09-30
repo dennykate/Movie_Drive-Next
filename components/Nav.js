@@ -27,27 +27,30 @@ const Nav = () => {
       </div>
 
       <div className="items-center space-x-10 pr-12 sm:flex hidden">
-        <a
-          href="/#home"
-          className="text-white font-sans hover:text-[#db36a4] cursor-pointer 
+        <Link href={"/#home"}>
+          <div
+            className="text-white font-sans hover:text-[#db36a4] cursor-pointer 
         transition-all duration-150"
-        >
-          Home
-        </a>
-        <a
-          href="/#about"
-          className="text-white font-sans hover:text-[#db36a4] cursor-pointer
+          >
+            Home
+          </div>
+        </Link>
+        <Link href={"/#about"}>
+          <div
+            className="text-white font-sans hover:text-[#db36a4] cursor-pointer
         transition-all duration-150"
-        >
-          About
-        </a>
-        <a
-          href="/#how-to-use"
-          className="text-white font-sans hover:text-[#db36a4] cursor-pointer
+          >
+            About
+          </div>
+        </Link>
+        <Link href={"/#how-to-use"}>
+          <div
+            className="text-white font-sans hover:text-[#db36a4] cursor-pointer
         transition-all duration-150"
-        >
-          How to Use
-        </a>
+          >
+            How to Use
+          </div>
+        </Link>
       </div>
 
       <div className="sm:hidden flex sm:w-24 w-16 h-full justify-center items-center">
@@ -73,15 +76,15 @@ const Nav = () => {
           !showNav ? "-translate-x-full  " : "translate-x-0  "
         } transform duration-100 z-10`}
       >
-        <a href="/#home" className="text-white font-sans ">
-          Home
-        </a>
-        <a href="/#about" className="text-white font-sans ">
-          About
-        </a>
-        <a href="/#how-to-use" className="text-white font-sans ">
-          How to Use
-        </a>
+        <Link href={"/#home"}>
+          <div className="text-white font-sans ">Home</div>
+        </Link>
+        <Link href={"/#about"}>
+          <div className="text-white font-sans ">About</div>
+        </Link>
+        <Link href={"/#how-to-use"}>
+          <div className="text-white font-sans ">How To Use</div>
+        </Link>
       </div>
     </div>
   );
