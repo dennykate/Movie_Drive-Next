@@ -1,5 +1,5 @@
 export const fetchUrl = async (url, type) => {
-  const res = await fetch(`http://localhost:3000/api/${type}`, {
+  const res = await fetch(`https://movie-drive-next.vercel.app/api/${type}`, {
     method: "POST",
     headers: {
       "Content-type": "application/json",
