@@ -6,7 +6,7 @@ import "plyr-react/plyr.css";
 import Nav from "./Nav";
 import LoadingAnimation from "../assests/loading-animation.gif";
 import Image from "next/image";
-import Link from "next/link";
+import { fetchUrl } from "../services/fetchUrl";
 
 const videoSrc = {
   type: "video",
@@ -22,29 +22,18 @@ const DriveHome = () => {
     const { url: queryUrl, type: queryType } = router.query;
 
     if (queryUrl && queryType) {
-      fetchUrl(queryUrl, queryType);
+      fetchUrlFromBackend(queryUrl, queryType);
       setType(queryType);
     }
   }, [router.query]);
 
-  const fetchUrl = (url, type) => {
-    fetch(`https://backend-scrap-bs2h.vercel.app/${type}`, {
-      method: "POST",
-      headers: {
-        "Content-type": "application/json",
-        Accept: "application/json",
-      },
-      body: JSON.stringify({
-        url,
-      }),
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        console.log(data);
-        setData(data);
-        videoSrc.title = data.title;
-        videoSrc.sources = [{ src: data.link, type: "video/mp4" }];
-      });
+  const fetchUrlFromBackend = async (queryUrl, queryType) => {
+    const data = await fetchUrl(queryUrl, queryType);
+
+    setData(data);
+    videoSrc.title = data.title;
+    videoSrc.sources = [{ src: data.link, type: "video/mp4" }];
+    videoSrc.poster = "https://i.postimg.cc/CKYqfhF7/icon.png";
   };
 
   return (
@@ -91,10 +80,9 @@ const DriveHome = () => {
             font-sans sm:tracking-widest tracking-wide font-black cursor-pointer hover:scale-105"
                   onClick={() => {
                     setShowPlayer(!showPlayer);
-                    console.log(videoSrc);
                   }}
                 >
-                  Stream
+                  Watch
                 </div>
 
                 <a href={`${data.link}`} target="_blink">
